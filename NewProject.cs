@@ -110,5 +110,4 @@ namespace Sunday.com
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-    }
 }
