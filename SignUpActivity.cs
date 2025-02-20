@@ -81,6 +81,7 @@ namespace Sunday.com
             }
             if (flag)
             {
+                // ------------------------ intent needs to be changed to strengths ------------------------
                 Intent SignUpTomain = new Intent(this, typeof(MainActivity));
                 StartActivity(SignUpTomain);
             }
