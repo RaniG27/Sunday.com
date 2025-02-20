@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#a8342c"
-    android:padding="20dp">
+    android:background="@drawable/background"
+    android:padding="20dp"
+    android:layoutDirection="ltr">
 
     <!-- Scrollable SeekBars -->
     <ScrollView
@@ -30,49 +31,164 @@
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center_horizontal"/>
 
-            <!-- SeekBars (1 to 6) -->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Problem solving" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skProblemBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer1" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+            <!-- SeekBars -->
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Writing and Expression" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skWriteBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer2" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problem solving"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Presentation and charisma" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skPresBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer3" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+            <SeekBar
+                android:id="@+id/skProblemBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Researching and analyzing" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skResearchBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer4" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:id="@+id/tickContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Creativity" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skCreatBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer5" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Writing and Expression"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Drawing Conclusions" android:textColor="@android:color/white" android:textSize="18sp"/>
-            <SeekBar android:id="@+id/skDrawConclusionsBar" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:max="9" android:progress="0"/>
-            <LinearLayout android:id="@+id/tickContainer6" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
-        
+            <SeekBar
+                android:id="@+id/skWriteBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presentation and charisma"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skPresBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Researching and analyzing"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skResearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Creativity"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skCreatBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drawing Conclusions"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skDrawConclusionsBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
         </LinearLayout>
     </ScrollView>
 

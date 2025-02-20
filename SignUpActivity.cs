@@ -83,16 +83,15 @@ namespace Sunday.com
             }
             if (flag)
             {
-                // ------------------------ intent needs to be changed to strengths ------------------------
-                Intent SignUpTomain = new Intent(this, typeof(MainActivity));
-                StartActivity(SignUpTomain);
+                Intent skillIntent = new Intent(this, typeof(SkillsRegActivity));
+                StartActivity(skillIntent);
             }
         }
 
         private void AlreadyMember_Click(object sender, EventArgs e)
         {
-            Intent signUpTomain = new Intent(this, typeof(MainActivity));
-            StartActivity(signUpTomain);
+            Intent mainIntent = new Intent(this, typeof(MainActivity));
+            StartActivity(mainIntent);
         }
     }
 }
