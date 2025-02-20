@@ -4410,10 +4410,7 @@ namespace Sunday.com
 			public const int select_dialog_singlechoice_material = 2131427384;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int SignUpLayout = 2131427385;
-			
-			// aapt resource value: 0x7F0B003A
-			public const int support_simple_spinner_dropdown_item = 2131427386;
+			public const int support_simple_spinner_dropdown_item = 2131427385;
 			
 			static Layout()
 			{
