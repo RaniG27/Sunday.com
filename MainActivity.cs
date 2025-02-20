@@ -26,7 +26,7 @@ namespace Sunday.com
 
         private void CreateAccount_Click(object sender, EventArgs e)
         {
-            Intent mainToSignUp = new Intent(this, typeof(SignUpActivity));
+            Intent mainToSignUp = new Intent(this,);
             StartActivity(mainToSignUp);
         }
 
