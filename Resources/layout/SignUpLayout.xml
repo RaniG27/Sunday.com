@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:orientation="vertical"
-    android:background="#a32c26"> 
+    android:background="#a8342c"> 
 
     <TextView
         android:id="@+id/txtSignUp"
@@ -85,9 +85,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up"
-        android:background="@android:color/white"
-        android:textColor="#800000"
-        android:textStyle="bold"
+        android:backgroundTint="#ffbbb7"
+        android:textColor="#5A0019"
         android:padding="10dp"
         android:textSize="18sp"/>
 
