@@ -47,8 +47,6 @@ namespace Sunday.com
             TableLay = FindViewById<LinearLayout>(Resource.Id.TableLayout);
 
 
-
-
         }
 
         public void OnClick(View v)
