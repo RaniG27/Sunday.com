@@ -31,18 +31,20 @@ namespace Sunday.com
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.SignUpLayout);
+            // Find Views by ID with correct naming conventions
+            TextView txtAlreadyMember = FindViewById<TextView>(Resource.Id.txtAlreadyMember);
+            Button btnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
 
-            AlreadyMember = FindViewById<TextView>(Resource.Id.txtAlreadyMember);
-            btnSignup = FindViewById<Button>(Resource.Id.btnSignUp);
+            EditText edtUsername = FindViewById<EditText>(Resource.Id.edtSignUsername);
+            EditText edtEmail = FindViewById<EditText>(Resource.Id.edtSignEmail);
+            EditText edtPassword = FindViewById<EditText>(Resource.Id.edtSignPassword);
+            EditText edtConfirmPassword = FindViewById<EditText>(Resource.Id.edtSignConfirmPassword);
 
-            name = FindViewById<EditText>(Resource.Id.SignUsername);
-            mail = FindViewById<EditText>(Resource.Id.SignEmail);
-            pass = FindViewById<EditText>(Resource.Id.SignPassword);
-            confirm = FindViewById<EditText>(Resource.Id.SignConfirmPassword);
-            starName = FindViewById<TextView>(Resource.Id.StarUserName);
-            starMail = FindViewById<TextView>(Resource.Id.StarEmail);
-            starPass = FindViewById<TextView>(Resource.Id.StarPassword);
-            starConfirm = FindViewById<TextView>(Resource.Id.StarConfirmPassword);
+            TextView txtStarUsername = FindViewById<TextView>(Resource.Id.txtStarUsername);
+            TextView txtStarEmail = FindViewById<TextView>(Resource.Id.txtStarEmail);
+            TextView txtStarPassword = FindViewById<TextView>(Resource.Id.txtStarPassword);
+            TextView txtStarConfirmPassword = FindViewById<TextView>(Resource.Id.txtStarConfirmPassword);
+
 
 
 

@@ -5,7 +5,10 @@
     android:background="#a8342c"
     android:orientation="vertical"
     android:padding="20dp">
+
+    <!-- Login Title -->
     <TextView
+        android:id="@+id/txtLoginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log in"
@@ -16,19 +19,20 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp" />
 
+    <!-- Username Field -->
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
         android:padding="12dp"
         android:background="#992d26"
         android:textColor="#FFFFFF"
-        
         android:layout_marginTop="50dp" />
 
+    <!-- Password Field -->
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -38,8 +42,9 @@
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp" />
 
+    <!-- Create Account Text -->
     <TextView
-        android:id="@+id/createAccount"
+        android:id="@+id/txtCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create a new account"
@@ -50,8 +55,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp" />
 
+    <!-- Login Button -->
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
