@@ -6,7 +6,10 @@ using AndroidX.AppCompat.App;
 using System;
 using Android;
 using Android.Content;
-
+using Firebase.Database;
+using Firebase.Database.Query;
+using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 namespace Sunday.com
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
@@ -17,6 +20,8 @@ namespace Sunday.com
         EditText name;
         EditText pass;
         CheckBox rem;
+        FirebaseClient firebase = new FirebaseClient("https://sundaydb-2ca02-default-rtdb.europe-west1.firebasedatabase.app/");
+
         Android.Content.ISharedPreferences sp;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -56,6 +61,43 @@ namespace Sunday.com
             }
         }
 
+        public async Task<string> LoginUser(string username, string password)
+        {
+            try
+            {
+                var user =  await firebase.Child("Users").Child(username).OnceSingleAsync<User>();
+
+                if (user != null)
+                {
+                    // Compare password
+                    if (user.Password == password) // 🔹 (If passwords are not hashed)
+                    {
+                        Intent intent1 = new Intent(this, typeof(HomePage));
+                        StartActivity(intent1);
+                        return "correct info";
+                     
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "Incorrect info!", ToastLength.Long).Show();
+                        return "incorrect info";
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(this, "Incorrect info!", ToastLength.Long).Show();
+                    return "incorrect info";
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Login Error: {ex.Message}");
+                return "incorrect info";
+            }
+        }
+    
+
+
         private void Create_Click(object sender, EventArgs e)
         {
             Intent intent1 = new Intent(this, typeof(SignUpActivity));
@@ -64,14 +106,7 @@ namespace Sunday.com
 
         private void Login_Click(object sender, EventArgs e)
         {
-            // ------------------------ missing a database ------------------------
-            Intent intent1 = new Intent(this, typeof(HomePage));
-            StartActivity(intent1);
-            var editor = sp.Edit();
-            editor.PutBoolean("remember", rem.Checked);
-            editor.PutString("name", name.Text);
-            editor.PutString("pass", pass.Text);
-            editor.Commit();
+            LoginUser(name.Text, pass.Text);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

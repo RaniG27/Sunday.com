@@ -8,38 +8,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SQLite;
+using Firebase.Database;
+using Firebase.Database.Query;
 
 namespace Sunday.com
 {
     internal class User
     {
-        [PrimaryKey, Column("Email")]
+
         public string Email { get; set; }
 
-        [Column("Uname")]
+
         public string UserName { get; set; }
 
-        [Column("Password")]
+
         public string Password { get; set; }
 
-        [Column("ProblemSolving")]
-        public int ProblemSolving { get; set; }
 
-        [Column("Writing")]
-        public int Writing { get; set; }
 
-        [Column("Presentation")]
-        public int Presentation { get; set; }
-
-        [Column("Research")]
-        public int Research { get; set; }
-
-        [Column("Creativity")]
-        public int Creativity { get; set; }
-
-        [Column("DrawingConclusions")]
-        public int DrawingConclusions { get; set; }
 
 
 
@@ -48,22 +34,6 @@ namespace Sunday.com
             this.Email = email;
             this.UserName = uname;
             this.Password = password;
-            this.ProblemSolving = 0;
-            this.Writing = 0;
-            this.Presentation = 0;
-            this.Research = 0;
-            this.Creativity = 0;
-            this.DrawingConclusions = 0;
-        }
-
-        public User(int problemSolving, int writing, int presentation, int research, int creativity, int drawingConclusions)
-        {
-            this.ProblemSolving = problemSolving;
-            this.Writing = writing;
-            this.Presentation = presentation;
-            this.Research = research;
-            this.Creativity = creativity;
-            this.DrawingConclusions = drawingConclusions;
         }
     }
 }

@@ -6,6 +6,7 @@
         android:background="#a8342c"
     android:padding="20dp">
     
+    
     <TextView
         android:id="@+id/txtProjectsTitle"
         android:layout_width="wrap_content"
@@ -17,6 +18,11 @@
         android:clickable="true"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp" />
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+  android:text="bibi"
+        android:id="@+id/firebasetest"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="300dp"

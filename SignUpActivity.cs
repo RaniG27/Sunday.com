@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Firebase.Database;
+using Firebase.Database.Query;
 
 namespace Sunday.com
 {
@@ -26,6 +28,7 @@ namespace Sunday.com
         TextView txtStarEmail;
         TextView txtStarPassword;
         TextView txtStarConfirmPassword;
+        FirebaseClient firebase = new FirebaseClient("https://sundaydb-2ca02-default-rtdb.europe-west1.firebasedatabase.app/");
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -83,9 +86,12 @@ namespace Sunday.com
             }
             if (flag)
             {
+                User user = new User(edtUsername.Text, edtEmail.Text, edtPassword.Text);
+                firebase.Child("Users").Child(user.UserName).PutAsync<User>(user).GetAwaiter().GetResult();
                 // ------------------------ intent needs to be changed to strengths ------------------------
-                Intent SignUpTomain = new Intent(this, typeof(MainActivity));
+                Intent SignUpTomain = new Intent(this, typeof(HomePage));
                 StartActivity(SignUpTomain);
+                
             }
         }
 
