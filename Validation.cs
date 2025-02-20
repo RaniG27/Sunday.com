@@ -18,9 +18,16 @@ namespace Sunday.com
         private static string pass = @"^(?=(.*[a-zA-Z]))(?=(.*[0-9]))[a-zA-Z0-9._%+-=!#]{8,20}$";
         private static string letter = @"^[a-zA-Z]+$";
         private static string num = @"^\d+$";
+        private static string username = @"^[a-zA-Z0-9_]+$";
+
         public static bool IsNumber(string str)
         {
             Regex reg = new Regex(num); // nums
+            return reg.IsMatch(str);
+        }
+        public static bool IsUserName(string str)
+        {
+            Regex reg = new Regex(username); // nums
             return reg.IsMatch(str);
         }
         public static bool IsLetter(string str)
