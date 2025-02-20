@@ -48,6 +48,22 @@ namespace Sunday.com
             this.Email = email;
             this.UserName = uname;
             this.Password = password;
+            this.ProblemSolving = 0;
+            this.Writing = 0;
+            this.Presentation = 0;
+            this.Research = 0;
+            this.Creativity = 0;
+            this.DrawingConclusions = 0;
+        }
+
+        public User(int problemSolving, int writing, int presentation, int research, int creativity, int drawingConclusions)
+        {
+            this.ProblemSolving = problemSolving;
+            this.Writing = writing;
+            this.Presentation = presentation;
+            this.Research = research;
+            this.Creativity = creativity;
+            this.DrawingConclusions = drawingConclusions;
         }
     }
 }
