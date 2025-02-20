@@ -24,7 +24,7 @@ namespace Sunday.com
 
             listView = FindViewById<ListView>(Resource.Id.listViewItems);
 
-            // Sample list items (only one field per row)
+            // Sample list items (only one field per row) 
             itemList = new List<string> { "Item 1", "Item 2", "Item 3", "Item 4" };
 
             // Set up an adapter to display the items
