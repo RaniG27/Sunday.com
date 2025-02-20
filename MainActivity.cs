@@ -26,8 +26,7 @@ namespace Sunday.com
 
         private void CreateAccount_Click(object sender, EventArgs e)
         {
-            Intent mainToSignUp = new Intent(this,typeof(SignUp));
-            StartActivity(mainToSignUp);
+            Intent mainToSignUp = new Intent();
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
