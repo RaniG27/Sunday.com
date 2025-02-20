@@ -62,7 +62,7 @@ namespace Sunday.com
             txtStarConfirmPassword.Visibility = ViewStates.Invisible;
             if (!Validation.IsUserName(edtUsername.Text) || edtUsername.Text.Length <3 || edtUsername.Text.Length > 20)
             {
-                flag = false;
+                flag = false;       
                 txtStarUsername.Visibility = ViewStates.Visible;
             }
             if (!Validation.IsMail(edtEmail.Text))
