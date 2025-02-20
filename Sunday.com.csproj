@@ -66,6 +66,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUpActivity.cs" />
+    <Compile Include="SkillsRegActivity.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\NewProjectLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SkillsRegLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

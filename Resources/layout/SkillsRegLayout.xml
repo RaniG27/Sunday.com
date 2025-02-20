@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a8342c"
+    android:padding="20dp">
+
+    <!-- Scrollable SeekBars -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btnSkillSave"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate your skills out of 10!"
+                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <!-- SeekBars (1 to 6) -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Problem solving" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skProblemBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer1" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Writing and Expression" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skWriteBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer2" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Presentation and charisma" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skPresBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer3" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Researching and analyzing" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skResearchBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer4" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Creativity" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skCreatBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer5" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Drawing Conclusions" android:textColor="@android:color/white" android:textSize="18sp"/>
+            <SeekBar android:id="@+id/skDrawConclusionsBar" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:max="9" android:progress="0"/>
+            <LinearLayout android:id="@+id/tickContainer6" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="10dp"/>
+        
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Save Button (Fixed at Bottom) -->
+    <Button
+        android:id="@+id/btnSkillSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:backgroundTint="#F9B1AF"
+        android:textColor="#5A0019"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+</RelativeLayout>
