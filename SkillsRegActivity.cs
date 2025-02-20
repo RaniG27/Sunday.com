@@ -96,7 +96,7 @@ namespace Sunday.com
                     TextSize = 14,
                     Gravity = GravityFlags.Center
                 };
-                tick.SetTextColor(Android.Graphics.Color.White);
+                tick.SetTextColor(Android.Graphics.Color.LightPink);
 
                 // Add weight for even spacing
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WrapContent, 1);

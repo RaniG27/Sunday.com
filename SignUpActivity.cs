@@ -62,7 +62,7 @@ namespace Sunday.com
             txtStarConfirmPassword.Visibility = ViewStates.Invisible;
             if (!Validation.IsUserName(edtUsername.Text) || edtUsername.Text.Length <3 || edtUsername.Text.Length > 20)
             {
-                flag = false;
+                flag = false;       
                 txtStarUsername.Visibility = ViewStates.Visible;
             }
             if (!Validation.IsMail(edtEmail.Text))
@@ -83,16 +83,15 @@ namespace Sunday.com
             }
             if (flag)
             {
-                // ------------------------ intent needs to be changed to strengths ------------------------
-                Intent SignUpTomain = new Intent(this, typeof(MainActivity));
-                StartActivity(SignUpTomain);
+                Intent skillIntent = new Intent(this, typeof(SkillsRegActivity));
+                StartActivity(skillIntent);
             }
         }
 
         private void AlreadyMember_Click(object sender, EventArgs e)
         {
-            Intent signUpTomain = new Intent(this, typeof(MainActivity));
-            StartActivity(signUpTomain);
+            Intent mainIntent = new Intent(this, typeof(MainActivity));
+            StartActivity(mainIntent);
         }
     }
 }
