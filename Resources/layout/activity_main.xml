@@ -41,20 +41,7 @@
         android:background="#992d26"
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp" />
-
-    <!-- Create Account Text -->
-    <TextView
-        android:id="@+id/txtCreateAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create a new account"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:clickable="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
-
+    
     <!-- Login Button -->
     <Button
         android:id="@+id/btnLogin"
@@ -64,7 +51,37 @@
         android:backgroundTint="#ffbbb7"
         android:textColor="#5A0019"
         android:padding="12dp"
-        android:textSize="14sp"
+        android:textSize="14dp"
         android:layout_marginTop="30dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    
+    <!-- Remember me checkbox -->
+    <CheckBox
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/cbRemember"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Remember me"/>
+        
+    <!-- Create Account Text -->
+        <TextView
+            android:id="@+id/txtCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Create a new account"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:gravity="end" />
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -15,6 +15,7 @@ namespace Sunday.com
         TextView login;
         EditText name;
         EditText pass;
+        CheckBox rem;
         Android.Content.ISharedPreferences sp;
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,9 +24,10 @@ namespace Sunday.com
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            login = FindViewById<TextView>(Resource.Id.createAccount);
-            name = FindViewById<EditText>(Resource.Id.username);
-            pass = FindViewById<EditText>(Resource.Id.password);
+            login = FindViewById<TextView>(Resource.Id.btnLogin);
+            name = FindViewById<EditText>(Resource.Id.edtUsername);
+            pass = FindViewById<EditText>(Resource.Id.edtPassword);
+            rem = FindViewById<CheckBox>(Resource.Id.cbRemember);
 
             login.Click += Login_Click;
 
@@ -41,15 +43,14 @@ namespace Sunday.com
 
         private void Login_Click(object sender, EventArgs e)
         {
-            // ------------------------ missing database ------------------------
+            sp = this.GetSharedPreferences("details", Android.Content.FileCreationMode.Private);
+            // ------------------------ missing a database ------------------------
             Intent mainToSignUp = new Intent();
             var editor = sp.Edit();
-            editor.PutBoolean("remember", cbRem.Checked);
-            editor.PutString("email", edMail.Text);
-            editor.PutString("pass", edPass.Text);
-            editor.PutString("fname", "itay");
+            editor.PutBoolean("remember", rem.Checked);
+            editor.PutString("name", name.Text);
+            editor.PutString("pass", pass.Text);
             editor.Commit();
-            sp = this.GetSharedPreferences("details", Android.Content.FileCreationMode.Private);
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
