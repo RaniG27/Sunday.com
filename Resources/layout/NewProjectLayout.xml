@@ -1,7 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#a8342c">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Project Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project's Name:"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/etProjectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter name here"
+                android:background="#992d26"
+                android:textColor="@android:color/white"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+        <!-- Project Subject -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project's Subject:"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/etProjectSubject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter subject here"
+                android:textColor="@android:color/white"
+                android:background="#992d26"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Project's Level:"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerProjectLevel"
+                android:layout_width="180sp"
+                android:layout_height="50sp"
+                android:background="@android:drawable/btn_dropdown"
+                android:padding="5dp"/>
+        </LinearLayout>
+
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="20sp"
+                android:backgroundTint="#F9B1AF"
+                android:id="@+id/BtnAdd"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter your partner's username "
+                android:textSize="18sp"
+            android:id="@+id/firstPersonId"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/TableLayout"/>
+
+            <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter a short description of the project:"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/etProjectIdea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter it here"
+                android:background="#992d26"
+                android:textColor="@android:color/white"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    
+
+</ScrollView>
