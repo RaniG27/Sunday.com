@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Sunday.com
+namespace Sunday.com 
 {
     internal class Validation
     {
