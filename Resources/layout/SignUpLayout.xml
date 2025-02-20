@@ -18,11 +18,10 @@
         android:layout_marginBottom="20dp"/>
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/SignUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:background="@android:color/transparent"
         android:background="#992d26"
         android:textColor="#FFFFFF"
         android:padding="10dp"
@@ -30,11 +29,10 @@
         android:layout_marginBottom="10dp"/>
 
     <EditText
-        android:id="@+id/etFullName"
+        android:id="@+id/SignFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
-        android:background="@android:color/transparent"
         android:background="#992d26"
         android:textColor="#FFFFFF"
         android:padding="10dp"
@@ -42,7 +40,7 @@
         android:layout_marginBottom="10dp"/>
 
     <EditText 
-        android:id="@+id/etEmail"
+        android:id="@+id/SignEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail"
@@ -54,7 +52,7 @@
         android:layout_marginBottom="10dp"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/SignPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -66,7 +64,7 @@
         android:layout_marginBottom="10dp"/>
 
     <EditText
-        android:id="@+id/etConfirmPassword"
+        android:id="@+id/SignConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
