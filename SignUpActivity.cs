@@ -15,71 +15,71 @@ namespace Sunday.com
     public class SignUpActivity : Activity
     {
 
-        TextView AlreadyMember;
-        Button btnSignup;
-        EditText name;
-        EditText mail;
-        EditText pass;
-        EditText confirm;
+        TextView txtAlreadyMember;
+        Button btnSignUp;
+        EditText edtUsername;
+        EditText edtEmail;
+        EditText edtPassword;
+        EditText edtConfirmPassword;
 
-        TextView starName;
-        TextView starMail;
-        TextView starPass;
-        TextView starConfirm;
+        TextView txtStarUsername;
+        TextView txtStarEmail;
+        TextView txtStarPassword;
+        TextView txtStarConfirmPassword;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.SignUpLayout);
             // Find Views by ID with correct naming conventions
-            TextView txtAlreadyMember = FindViewById<TextView>(Resource.Id.txtAlreadyMember);
-            Button btnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
+            txtAlreadyMember = FindViewById<TextView>(Resource.Id.txtAlreadyMember);
+            btnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);
 
-            EditText edtUsername = FindViewById<EditText>(Resource.Id.edtSignUsername);
-            EditText edtEmail = FindViewById<EditText>(Resource.Id.edtSignEmail);
-            EditText edtPassword = FindViewById<EditText>(Resource.Id.edtSignPassword);
-            EditText edtConfirmPassword = FindViewById<EditText>(Resource.Id.edtSignConfirmPassword);
+            edtUsername = FindViewById<EditText>(Resource.Id.edtSignUsername);
+            edtEmail = FindViewById<EditText>(Resource.Id.edtSignEmail);
+            edtPassword = FindViewById<EditText>(Resource.Id.edtSignPassword);
+            edtConfirmPassword = FindViewById<EditText>(Resource.Id.edtSignConfirmPassword);
 
-            TextView txtStarUsername = FindViewById<TextView>(Resource.Id.txtStarUsername);
-            TextView txtStarEmail = FindViewById<TextView>(Resource.Id.txtStarEmail);
-            TextView txtStarPassword = FindViewById<TextView>(Resource.Id.txtStarPassword);
-            TextView txtStarConfirmPassword = FindViewById<TextView>(Resource.Id.txtStarConfirmPassword);
-
-
+            txtStarUsername = FindViewById<TextView>(Resource.Id.txtStarUsername);
+            txtStarEmail = FindViewById<TextView>(Resource.Id.txtStarEmail);
+            txtStarPassword = FindViewById<TextView>(Resource.Id.txtStarPassword);
+            txtStarConfirmPassword = FindViewById<TextView>(Resource.Id.txtStarConfirmPassword);
 
 
 
-            AlreadyMember.Click += AlreadyMember_Click;
-            btnSignup.Click += BtnSignup_Click;
+
+
+            txtAlreadyMember.Click += AlreadyMember_Click;
+            btnSignUp.Click += BtnSignup_Click;
         }
 
         private void BtnSignup_Click(object sender, EventArgs e)
         {
             bool flag = true;
-            starName.Visibility = ViewStates.Invisible;
-            starMail.Visibility = ViewStates.Invisible;
-            starPass.Visibility = ViewStates.Invisible;
-            starConfirm.Visibility = ViewStates.Invisible;
-            if (!Validation.IsUserName(name.Text) || name.Text.Length <3 || name.Text.Length > 20)
+            txtStarUsername.Visibility = ViewStates.Invisible;
+            txtStarEmail.Visibility = ViewStates.Invisible;
+            txtStarPassword.Visibility = ViewStates.Invisible;
+            txtStarConfirmPassword.Visibility = ViewStates.Invisible;
+            if (!Validation.IsUserName(edtUsername.Text) || edtUsername.Text.Length <3 || edtUsername.Text.Length > 20)
             {
                 flag = false;
-                starName.Visibility = ViewStates.Visible;
+                txtStarUsername.Visibility = ViewStates.Visible;
             }
-            if (!Validation.IsMail(mail.Text))
+            if (!Validation.IsMail(edtEmail.Text))
             {
                 flag = false;
-                starMail.Visibility = ViewStates.Visible;
+                txtStarEmail.Visibility = ViewStates.Visible;
             }
-            if (!Validation.IsPass(pass.Text))
+            if (!Validation.IsPass(edtPassword.Text))
             {
                 flag = false;
-                starPass.Visibility = ViewStates.Visible;
-                starConfirm.Visibility = ViewStates.Visible;
+                txtStarPassword.Visibility = ViewStates.Visible;
+                txtStarConfirmPassword.Visibility = ViewStates.Visible;
             }
-            else if (confirm.Text != pass.Text)
+            else if (edtConfirmPassword.Text != edtPassword.Text)
             {
                 flag = false;
-                starConfirm.Visibility = ViewStates.Visible;
+                txtStarConfirmPassword.Visibility = ViewStates.Visible;
             }
             if (flag)
             {
@@ -91,8 +91,8 @@ namespace Sunday.com
 
         private void AlreadyMember_Click(object sender, EventArgs e)
         {
-            Intent SignUpTomain = new Intent(this, typeof(MainActivity));
-            StartActivity(SignUpTomain);
+            Intent signUpTomain = new Intent(this, typeof(MainActivity));
+            StartActivity(signUpTomain);
         }
     }
 }

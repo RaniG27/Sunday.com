@@ -36,12 +36,23 @@ namespace Sunday.com
             sp = this.GetSharedPreferences("details", Android.Content.FileCreationMode.Private);
 
             // ---------------- shared pref ----------------
-            string spName = sp.GetString("user", null);
+            string spName = sp.GetString("name", null);
             string spPass = sp.GetString("pass", null);
-            if (spName != null && spPass != null)
+            bool spRem = sp.GetBoolean("remember", false);
+            if (spName != null && spPass != null && spRem)
             {
-                name.Text = spName;
-                pass.Text = spPass;
+                Intent intent1 = new Intent(this, typeof(HomePage));
+                StartActivity(intent1);
+            }
+            else if (!spRem)
+            {
+                var editor = sp.Edit();
+
+                editor.PutBoolean("remember", false);
+                editor.PutString("name", null);
+                editor.PutString("pass", null);
+                editor.Commit();
+
             }
         }
 
