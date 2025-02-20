@@ -14,18 +14,20 @@ namespace Sunday.com
     [Activity(Label = "HomePage")]
     public class HomePage : Activity
     {
-        Button newPorject;
+        Button btnNewProject;
+        TextView btnLogOut;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.HomePageLayout);
 
-            newPorject = FindViewById<Button>(Resource.Id.newProject);
-            newPorject.Click += NewPorject_Click;
+            btnNewProject = FindViewById<Button>(Resource.Id.btnNewProject);
+            btnLogOut = FindViewById<TextView>(Resource.Id.txtLogout);
+            btnNewProject.Click += NewProject_Click;
         }
 
-        private void NewPorject_Click(object sender, EventArgs e)
+        private void NewProject_Click(object sender, EventArgs e)
         {
             Intent HomeToNewProject = new Intent(this, typeof(NewProject));
             StartActivity(HomeToNewProject);

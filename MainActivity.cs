@@ -12,7 +12,8 @@ namespace Sunday.com
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        TextView login;
+        Button login;
+        TextView create;
         EditText name;
         EditText pass;
         CheckBox rem;
@@ -24,12 +25,15 @@ namespace Sunday.com
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            login = FindViewById<TextView>(Resource.Id.btnLogin);
+            login = FindViewById<Button>(Resource.Id.btnLogin);
+            create = FindViewById<TextView>(Resource.Id.txtCreateAccount);
             name = FindViewById<EditText>(Resource.Id.edtUsername);
             pass = FindViewById<EditText>(Resource.Id.edtPassword);
             rem = FindViewById<CheckBox>(Resource.Id.cbRemember);
 
             login.Click += Login_Click;
+            create.Click += Create_Click;
+            sp = this.GetSharedPreferences("details", Android.Content.FileCreationMode.Private);
 
             // ---------------- shared pref ----------------
             string spName = sp.GetString("user", null);
@@ -41,11 +45,17 @@ namespace Sunday.com
             }
         }
 
+        private void Create_Click(object sender, EventArgs e)
+        {
+            Intent intent1 = new Intent(this, typeof(SignUpActivity));
+            StartActivity(intent1);
+        }
+
         private void Login_Click(object sender, EventArgs e)
         {
-            sp = this.GetSharedPreferences("details", Android.Content.FileCreationMode.Private);
             // ------------------------ missing a database ------------------------
-            Intent mainToSignUp = new Intent();
+            Intent intent1 = new Intent(this, typeof(HomePage));
+            StartActivity(intent1);
             var editor = sp.Edit();
             editor.PutBoolean("remember", rem.Checked);
             editor.PutString("name", name.Text);
