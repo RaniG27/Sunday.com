@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Sunday.com</string>
     <string name="action_settings">Settings</string>
+
+	<string-array name="levels_array">
+		<item>middle school</item>
+		<item>high school</item>
+		<item>academic </item>
+	</string-array>
+	
 </resources>

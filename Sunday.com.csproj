@@ -71,6 +71,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignUpActivity.cs" />
+    <Compile Include="SkillsRegActivity.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>
@@ -106,7 +107,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <AndroidResource Include="Resources\layout\SkillsRegLayout.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FirebaseDatabase.net">
@@ -133,6 +136,9 @@
     <AndroidResource Include="Resources\layout\NewProjectLayout.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\BackGround.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

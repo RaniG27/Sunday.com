@@ -8,8 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Firebase.Database;
-using Firebase.Database.Query;
 
 namespace Sunday.com
 {
@@ -28,7 +26,6 @@ namespace Sunday.com
         TextView txtStarEmail;
         TextView txtStarPassword;
         TextView txtStarConfirmPassword;
-        FirebaseClient firebase = new FirebaseClient("https://sundaydb-2ca02-default-rtdb.europe-west1.firebasedatabase.app/");
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -65,7 +62,7 @@ namespace Sunday.com
             txtStarConfirmPassword.Visibility = ViewStates.Invisible;
             if (!Validation.IsUserName(edtUsername.Text) || edtUsername.Text.Length <3 || edtUsername.Text.Length > 20)
             {
-                flag = false;
+                flag = false;       
                 txtStarUsername.Visibility = ViewStates.Visible;
             }
             if (!Validation.IsMail(edtEmail.Text))
@@ -86,19 +83,15 @@ namespace Sunday.com
             }
             if (flag)
             {
-                User user = new User(edtUsername.Text, edtEmail.Text, edtPassword.Text);
-                firebase.Child("Users").Child(user.UserName).PutAsync<User>(user).GetAwaiter().GetResult();
-                // ------------------------ intent needs to be changed to strengths ------------------------
-                Intent SignUpTomain = new Intent(this, typeof(HomePage));
-                StartActivity(SignUpTomain);
-                
+                Intent skillIntent = new Intent(this, typeof(SkillsRegActivity));
+                StartActivity(skillIntent);
             }
         }
 
         private void AlreadyMember_Click(object sender, EventArgs e)
         {
-            Intent signUpTomain = new Intent(this, typeof(MainActivity));
-            StartActivity(signUpTomain);
+            Intent mainIntent = new Intent(this, typeof(MainActivity));
+            StartActivity(mainIntent);
         }
     }
 }
