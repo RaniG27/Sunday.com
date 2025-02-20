@@ -15,6 +15,11 @@ namespace Sunday.com
     public class SignUp : Activity
     {
         TextView AlreadyMember;
+        EditText name;
+        EditText mail;
+        EditText pass;
+        EditText confirm;
+        Button btnSignup;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -22,7 +27,23 @@ namespace Sunday.com
             SetContentView(Resource.Layout.SignUpLayout);
 
             AlreadyMember = FindViewById<TextView>(Resource.Id.txtAlreadyMember);
+            btnSignup = FindViewById<Button>(Resource.Id.btnSignUp);
+
+            name = FindViewById<EditText>(Resource.Id.SignUsername);
+            mail = FindViewById<EditText>(Resource.Id.SignEmail);
+            pass = FindViewById<EditText>(Resource.Id.SignPassword);
+            confirm = FindViewById<EditText>(Resource.Id.SignConfirmPassword);
+
+
+
+
             AlreadyMember.Click += AlreadyMember_Click;
+            btnSignup.Click += BtnSignup_Click;
+        }
+
+        private void BtnSignup_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void AlreadyMember_Click(object sender, EventArgs e)
