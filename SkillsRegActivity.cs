@@ -8,28 +8,39 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Firebase.Database;
+using Firebase.Database.Query;
+using Newtonsoft.Json;
 
 namespace Sunday.com
 {
     [Activity(Label = "SkillsRegActivity")]
     public class SkillsRegActivity : Activity
     {
+       
         private SeekBar[] seekBars;
         private TextView txtSeekValue;
         private LinearLayout[] tickContainers;
         private Button btnSkillSave;
         private SeekBar skProblemBar, skWriteBar, skPresBar, skResearchBar, skCreatBar, skDrawConclusionsBar;
         private int problemValue = 1, writeValue = 1, presValue = 1, researchValue = 1, creatValue = 1, conclusionsValue = 1; // Default values (1-10)
+        FirebaseClient firebase = new FirebaseClient("https://sundaydb-2ca02-default-rtdb.europe-west1.firebasedatabase.app/");
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+
             SetContentView(Resource.Layout.SkillsRegLayout);
+            string username = Intent.GetStringExtra("username");
+            string password = Intent.GetStringExtra("password");
+            string email = Intent.GetStringExtra("email");
             skProblemBar = FindViewById<SeekBar>(Resource.Id.skProblemBar);
             skWriteBar = FindViewById<SeekBar>(Resource.Id.skWriteBar);
             skPresBar = FindViewById<SeekBar>(Resource.Id.skPresBar);
             skResearchBar = FindViewById<SeekBar>(Resource.Id.skResearchBar);
             skCreatBar = FindViewById<SeekBar>(Resource.Id.skCreatBar);
+
             skDrawConclusionsBar = FindViewById<SeekBar>(Resource.Id.skDrawConclusionsBar);
             seekBars = new SeekBar[]
        {
@@ -73,6 +84,12 @@ namespace Sunday.com
                 Button btnSkillSave = FindViewById<Button>(Resource.Id.btnSkillSave);
                 btnSkillSave.Click += (s, e) =>
                 {
+                    User user = new User(username, email, password, problemValue, writeValue, presValue, researchValue, creatValue, conclusionsValue);
+                    Toast.MakeText(this, $"{username}, {email}, {password},", ToastLength.Short).Show();
+                    
+                    firebase.Child("Users").Child(user.UserName).PutAsync<User>(user);
+                    Intent homeIntent = new Intent(this, typeof(HomePage));
+                    StartActivity(homeIntent);
                     Toast.MakeText(this, $"Saved: {problemValue}, {writeValue}, {presValue}, {researchValue}, {creatValue}, {conclusionsValue}", ToastLength.Short).Show();
                 };
 

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#a8342c"
+>
+<LinearLayout
+        
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
     android:orientation="vertical"
-    android:background="@drawable/BackGround"
+    android:background="#a8342c"
 >
 
     <TextView
@@ -156,6 +163,185 @@
             android:layout_marginRight="13dp"
             android:visibility="invisible"/>
     </LinearLayout>
+       <!-- Scrollable SeekBars -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate your skills out of 10!"
+                android:textSize="22sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <!-- SeekBars -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Problem solving"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skProblemBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Writing and Expression"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skWriteBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presentation and charisma"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skPresBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Researching and analyzing"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skResearchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Creativity"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skCreatBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drawing Conclusions"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <SeekBar
+                android:id="@+id/skDrawConclusionsBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#992d26"
+                android:thumbTint="#F9B1AF"
+                android:progressBackgroundTint="@android:color/transparent"
+                android:progressTint="@android:color/transparent"
+                android:max="9"
+                android:progress="0"/>
+
+            <LinearLayout
+                android:id="@+id/tickContainer6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
 
     <!-- Sign Up Button -->
     <Button
@@ -181,3 +367,4 @@
         android:clickable="true"
         android:textStyle="bold"/>
 </LinearLayout>
+</ScrollView>

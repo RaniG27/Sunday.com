@@ -24,16 +24,36 @@ namespace Sunday.com
 
         public string Password { get; set; }
 
+        public int Solving { get; set; }
+
+        public int Writing { get; set; }
+
+        public int Charisma { get; set; }
+
+        public int Researching { get; set; }
+
+        public int Creativity { get; set; }
+
+        public int Conclusions { get; set; }
 
 
 
 
 
-        public User(string uname, string email, string password)
+
+
+
+        public User(string uname, string email, string password, int Solving, int Writing, int Charisma, int Researching, int Creativity, int Conclusions)
         {
             this.Email = email;
             this.UserName = uname;
             this.Password = password;
+            this.Solving = Solving;
+            this.Writing = Writing;
+            this.Charisma = Charisma;
+            this.Researching = Researching;
+            this.Creativity = Creativity;
+            this.Conclusions = Conclusions;
         }
     }
 }
