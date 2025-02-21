@@ -21,6 +21,7 @@ namespace Sunday.com
         Button btnAdd;
         Button btnDinamicAdd;
         EditText edtUserName;
+        Button BtnCreate;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -28,7 +29,6 @@ namespace Sunday.com
             SetContentView(Resource.Layout.NewProjectLayout);
 
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
 
@@ -45,7 +45,13 @@ namespace Sunday.com
             btnAdd = FindViewById<Button>(Resource.Id.BtnAdd);
             btnAdd.SetOnClickListener(this);
             TableLay = FindViewById<LinearLayout>(Resource.Id.TableLayout);
+            BtnCreate = FindViewById<Button>(Resource.Id.BtnCreate);
+            BtnCreate.Click += BtnCreate_Click;
 
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -103,11 +109,6 @@ namespace Sunday.com
 
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        
     }
 }
